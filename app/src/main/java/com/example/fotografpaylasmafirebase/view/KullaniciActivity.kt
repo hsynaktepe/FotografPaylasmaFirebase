@@ -1,4 +1,4 @@
-package com.example.fotografpaylasmafirebase
+package com.example.fotografpaylasmafirebase.view
 
 import android.content.Context
 import android.content.Intent
@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import com.example.fotografpaylasmafirebase.R
 import com.google.firebase.auth.FirebaseAuth
 
 class KullaniciActivity : AppCompatActivity() {
@@ -26,7 +27,7 @@ class KullaniciActivity : AppCompatActivity() {
 
         val guncelKullanici = auth.currentUser
         if (guncelKullanici != null){
-            val intent = Intent(this,HaberlerActivity::class.java)
+            val intent = Intent(this, HaberlerActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -42,7 +43,7 @@ class KullaniciActivity : AppCompatActivity() {
                     val guncelKullanici = auth.currentUser?.email.toString()
                     Toast.makeText(this,"Hoşgeldin: ${guncelKullanici}",Toast.LENGTH_LONG).show()
 
-                    val intent = Intent(this,HaberlerActivity::class.java)
+                    val intent = Intent(this, HaberlerActivity::class.java)
                     startActivity(intent)
                     finish()
                 }
@@ -61,7 +62,7 @@ class KullaniciActivity : AppCompatActivity() {
             //asenkron
             if (task.isSuccessful){
                 //diğer aktiviteye geçiş
-                val intent = Intent(this,HaberlerActivity::class.java)
+                val intent = Intent(this, HaberlerActivity::class.java)
                 startActivity(intent)
                 finish()
             }
